@@ -1,3 +1,5 @@
 friendsArray = [
     
-]
+];
+
+module.exports = friendsArray;
