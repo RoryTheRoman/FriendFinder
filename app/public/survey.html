@@ -9,33 +9,86 @@
     <title>FriendFinderSurvey</title>
 </head>
 <body>
+
     <div class="container">
         <div class="jumbotron">
-            <h1 class="text-center homepagetext"><span class="glyphicon glyphicon-heart-empty"></span> Friend Finder!</h1> 
-            <h2 class="text-center homepagetext">Survey below, make some connections!</h2> 
+            <h1 class="text-center surveypagetext"><span class="glyphicon glyphicon-heart-empty"></span> Friend Finder!</h1> 
+            <h2 class="text-center surveypagetext">Survey below, make some connections!</h2> 
+            <h3 class="text-center surveypagetext">On a scale of 1 - 5, choose how much you relate to or agree with each statment or question.  5 means you relate/agree the most</h3>         
         </div>
     </div>
     <div class="container">
-        <h2>Tell Us About Yourself:</h2>
-        <h3>Your Name</h3>
         <form>
-        <input type="text" class="submission" id="name" class="form-control">
-        <h3>Link to Photo (required)</h3>
-        <input type="text" class="submission" id="photo" class="form-control">        
-        <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Action <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
-        </div>
-        </form>
+            <div class="form-group">
+                <label for="nameInput">Name</label> 
+                <input type="text" class="form-control" id="nameInput" placeholder="Tell us your name!"> 
+                <label for="photoLinkInput">Link to Photo</label> 
+                <input type="email" class="form-control" id="photoLinkInput" placeholder="Give us your best duck-lips!"> 
+            </div>
+            <div class="form-group">
+                <label for="q1">Test Question</label>
+                <select class="form-control" id="q1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q2">Test Question 2</label>
+                <select class="form-control" id="q2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q3">Test Question 3</label>
+                <select class="form-control" id="q3">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q4">Test Question 4</label>
+                <select class="form-control" id="q4">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q5">Test Question 5</label>
+                <select class="form-control" id="q5">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div> 
+            <div class="form-group">
+                <label for="q1">Test Question</label>
+                <select class="form-control" id="q1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-info submit">Make a Match!</button>                                                                                     
+        </form> 
     </div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>    
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>            
 <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script> 
