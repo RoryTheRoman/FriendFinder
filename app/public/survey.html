@@ -22,11 +22,11 @@
         <form>
             <div class="form-group">
                 <label for="nameInput">Name</label> 
-                <input type="text" class="form-control" id="nameInput" placeholder="Tell us your name!">
+                <input type="text" class="form-control clearout" id="nameInput" placeholder="Tell us your name!">
             </div>
             <div class="form-group"> 
                 <label for="photoLinkInput">Link to Photo</label> 
-                <input type="text" class="form-control" id="photoLinkInput" placeholder="Give us your best duck-lips!"> 
+                <input type="text" class="form-control clearout" id="photoLinkInput" placeholder="Give us your best duck-lips!"> 
             </div>
             <div class="form-group">
                 <label for="q1">Test Question</label>
@@ -119,10 +119,12 @@
         $.post("/api/friends", potentialMatch, function(data){
             if(data){
                 alert("your shit was added!")//change this to show modal later on
-                $(".form-control").val("");   
+                $(".clearout").val(""); 
+                $(".drop-downs").val(1);  
             }else{
                 alert("sorry, your shit was not added.");
-                $(".form-control").val("");                 
+                $(".clearout").val("");
+                $(".drop-downs").val(1);                 
             };
 
         });
