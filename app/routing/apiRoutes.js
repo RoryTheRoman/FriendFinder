@@ -5,7 +5,10 @@ module.exports = function(app) {
         res.json(friendsData);
     });
     app.post("/api/friends", function(req, res){
-        friendsData.push(req.body);
+        var userInput = req.body;
+        friendsData.push(userInput);
         res.json(true);
+        var userScore = req.scores;
+
     });
 }

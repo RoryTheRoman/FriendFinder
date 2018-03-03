@@ -119,10 +119,14 @@
         $.post("/api/friends", potentialMatch, function(data){
             if(data){
                 alert("your shit was added!")//change this to show modal later on
+                $(".form-control").val("");   
             }else{
                 alert("sorry, your shit was not added.");
+                $(".form-control").val("");                 
             };
-        });    
+
+        });
+  
     });
 </script>    
 </body>
