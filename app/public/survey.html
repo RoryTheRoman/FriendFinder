@@ -10,6 +10,25 @@
     <title>FriendFinderSurvey</title>
 </head>
 <body>
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Your Best Match is....</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <div class="modal-body">
+                <h5 id="match-name"></h5>
+                <h5 id="match-img"></h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>    
 
     <div class="container">
         <div class="jumbotron">
@@ -126,9 +145,7 @@
                 $(".clearout").val("");
                 $(".drop-downs").val(1);                 
             };
-
-        });
-  
+        });  
     });
 </script>    
 </body>
