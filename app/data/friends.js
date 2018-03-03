@@ -1,5 +1,3 @@
-friendsArray = [
-    
-];
+friendsArray = [];
 
 module.exports = friendsArray;
