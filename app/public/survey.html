@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -21,9 +22,11 @@
         <form>
             <div class="form-group">
                 <label for="nameInput">Name</label> 
-                <input type="text" class="form-control" id="nameInput" placeholder="Tell us your name!"> 
+                <input type="text" class="form-control" id="nameInput" placeholder="Tell us your name!">
+            </div>
+            <div class="form-group"> 
                 <label for="photoLinkInput">Link to Photo</label> 
-                <input type="email" class="form-control" id="photoLinkInput" placeholder="Give us your best duck-lips!"> 
+                <input type="text" class="form-control" id="photoLinkInput" placeholder="Give us your best duck-lips!"> 
             </div>
             <div class="form-group">
                 <label for="q1">Test Question</label>
@@ -76,8 +79,8 @@
                 </select>
             </div> 
             <div class="form-group">
-                <label for="q1">Test Question</label>
-                <select class="form-control" id="q1">
+                <label for="q6">Test Questionv6</label>
+                <select class="form-control" id="q6">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -85,21 +88,41 @@
                     <option>5</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-info submit">Make a Match!</button>                                                                                     
+            <button type="submit" class="btn btn-info" id="submit">Make a Match!  <i class="fas fa-arrow-alt-circle-up"></i></button>                                                                                     
         </form> 
     </div>
+    <br>
+    <div class="container">
+    <footer class="footer">
+        <div class="container">
+            <p><a href="api/friends">API Friends Link</a> | <a href="https://github.com/RoryTheRoman/FriendFinder" target="_blank">GitHub Repo</a> | <a href="/index">Home</a></p>
+        </div>
+    </footer>
+    </div>  
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>    
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>            
-<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script> 
 <script type="text/javascript">
-    $(".sumbission").on("click", function (event){
+    $("#submit").on("click", function (event){
         event.preventDefault();
         var potentialMatch = {
-            lovebird: $("name").val().trim(),
-            photo: $("photo").val().trim()
+            lovebird: $("#nameInput").val().trim(),
+            photo: $("#photoLinkInput").val().trim(),
+            scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val()
+                    ]
         };
         console.log(potentialMatch);
+        $.post("/api/friends", potentialMatch, function(data){
+            if(data){
+                alert("your shit was added!")//change this to show modal later on
+            }else{
+                alert("sorry, your shit was not added.");
+            };
+        });    
     });
 </script>    
 </body>
