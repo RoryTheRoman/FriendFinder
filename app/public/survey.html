@@ -135,9 +135,11 @@
                     ]
         };
         console.log(potentialMatch);
-        $.post("/api/friends", potentialMatch, function(data){
+        $.post("/api/friends", potentialMatch).done(function(data){
             if(data){
                 alert("your shit was added!")//change this to show modal later on
+                alert("Your match is:" + data.matchName);
+                alert("your match image is:" + data.matchImg);
                 $(".clearout").val(""); 
                 $(".drop-downs").val(1);  
             }else{
